@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Golos+Text&family=Quicksand:wght@300&family=Shantell+Sans:wght@300&display=swap');
+/* des styles globales */
+*{
+    padding:0; margin:0; box-sizing:border-box;
+}
+.title{
+     text-align:center; margin:40px 40px 0px 40px;  font-family: 'Cabin', sans-serif;
+     font-weight:bold; font-size:40px;
+     letter-spacing:3px; 
+}
+/* header */
+header{
+    display:flex; justify-content:space-around;
+    background-color:#0e8a8a; color:white;
+    align-items:center; position:fixed; width:100%;
+    height:100px;  top:0; left:0;
+    z-index:100;
+}
+header #title_web{
+    font-size:35px; font-weight:500; font-family: 'Golos Text', sans-serif;
+    transition:all 0.4s; text-decoration:none; color:white;
+}
+#title_web i{
+    margin-right:5px; color:#50f1ee;
+}
+header #title_web .sign{
+    color:#50f1ee;
+}
+header #list_icon{
+    display:none; font-size:35px; cursor:pointer; z-index:101; color:rgb(255, 255, 255);
+} 
+header ul{
+    display:flex; height:116.5px; 
+    line-height:125.5px; transition:all 0.4s;
+}
+header ul li{
+    list-style-type:none; padding:0px 14px; background-color:#17b0ae;
+}
+header ul li:nth-child(2){
+    background-color:#0d9293;
+}
+header ul li:nth-child(3){
+    background-color:#089fa0;
+}
+header ul li:nth-child(4){
+    background-color:#00b4b4;
+}
+header ul li:nth-child(5){
+    background-color:#793bba;
+}
+header ul li.active_link_header{
+    background-color:white; 
+}
+header ul li.active_link_header>a{
+    color:#045c5c;
+}
+header ul li a{
+    text-decoration:none; color:white; font-weight:600; font-size:16px;
+    display:block; transition:all 0.4s;
+}
+header ul li a:hover{
+    color:#045c5c;
+}
+@media (max-width:1000px) {
+    header{
+        justify-content:space-between; padding:0; padding-left:15px; 
+    }
+    header #title_web{
+        font-size:30px;
+    }
+}
+
+@media (max-width:800px) {
+    header{
+         padding-right:20px;
+    }
+    header #title_web{
+        font-size:30px;
+    }
+    header #list_icon{
+        display:block; 
+    }     
+    header ul{
+        width:100vw; height:100vh; left:0;top:0; 
+        position:absolute; display:flex; flex-direction:column;
+        padding:0; transform:translateX(-100%);
+    }
+    header ul li{
+        width:100vw; height:20vh;
+    }
+   
+}
+@media (max-width:600px) {
+    header{
+         padding-right:20px;
+    }
+    header ul{
+        display:flex;
+    }
+    header #title_web{
+        font-size:25px;
+    }
+    header #list_icon{
+        display:block; font-size:30px;
+    }
+}
+
+/* slider */
+#slider{
+    margin-top:100px;  background:linear-gradient(90deg,#793bba,#0d9293);
+    animation: moveBackground 8s alternate infinite;  width:100%; height:90vh; overflow:hidden; 
+}
+@keyframes moveBackground {
+    0%{
+        background-position:0px 0px;
+    }
+    100%{
+        background-position:98.5vw 0px;
+    }
+}
+.container_slider{
+   display:none;
+   position:relative;   
+   padding-left:70px;
+}
+.arrows_slider{
+    position:absolute; font-size:40px; top:60%; transform:translateY(-60%);
+    color:gray; z-index:2; 
+}
+.arrows_slider.bi-caret-left-square-fill{
+    left:2%;
+}
+.arrows_slider.bi-caret-right-square-fill{
+    right:2%;
+}
+.container_slider.active_slider{
+    display:flex; align-items:center; 
+    flex-wrap:wrap; justify-content:space-around; 
+}
+.container_slider.active_slider .slider_content{
+    animation:content_slider 2s alternate;
+}
+@keyframes content_slider{
+    0%{
+        transform:translateY(200px);
+        opacity:0;
+    }
+    100%{
+        transform:translateY(0px);
+        opacity:1;
+    }
+}
+.container_slider.active_slider .slider_img .img_slider{
+    animation:image_slider 5s alternate;
+}
+@keyframes image_slider{
+    0%{
+        transform:translateX(300px);
+        opacity:0;
+    }
+    100%{
+        transform:translateX(0px);
+        opacity:1;
+    }
+}
+
+.container_slider .slider_content .paragraph_slider{
+    margin-top:50px;
+    font-family:Arial, Helvetica, sans-serif; font-size:25px;
+    color:white; 
+}
+.container_slider .slider_content .title_slider{
+    font-size:50px; margin-bottom:20px; 
+    color:white; font-weight:bold;
+    font-family: 'Shantell Sans', cursive;
+}
+.container_slider  .chercher_appartement_btn{
+    text-decoration:none; color:#ffffff; 
+    padding:10px 15px; font-family:Arial, Helvetica, sans-serif;
+    font-size:20px; border-radius:10px;
+    border:1px solid white;
+    transition:all 0.4s;
+}
+
+.container_slider .chercher_appartement_btn:hover{
+    background-color:white; color:#0d9293;
+}
+.container_slider .lien_slider{
+    animation:chercher_appartement_btn 2s alternate;
+
+}
+@keyframes chercher_appartement_btn {
+    0%{
+        transform:translate(200px,-400px);
+    }
+    100%{
+        transform:translate(0px);
+    }
+}
+.container_slider .slider_img .img_slider{
+    width:500px; height:500px; border-radius:10px;
+}
+@media (max-width:1300px) { 
+    .container_slider .slider_img .img_slider{
+        width:430px; height:430px;
+    }
+    .container_slider .slider_content .title_slider{
+        font-size:45px;
+    }
+    .container_slider .slider_content .paragraph_slider{
+        font-size:23px;
+    }
+    .container_slider{  
+        padding-left:30px;
+     }
+}
+@media (max-width:1000px) {   
+    .container_slider .slider_content .title_slider{
+        font-size:40px;
+    }
+    .container_slider .slider_content .paragraph_slider{
+        font-size:20px;
+    }
+    .container_slider{  
+        padding-left:25px;
+     }
+}
+@media (max-width:800px) { 
+    .container_slider .slider_content .title_slider{
+        font-size:35px;
+    }
+    .container_slider .slider_content .paragraph_slider{
+        font-size:18px;
+    }
+    .container_slider{  
+        padding-left:20px;
+    }
+    .container_slider  .chercher_appartement_btn{
+        font-size:17px;
+    }
+}
+/* about */
+.content_about{
+    display:flex; align-items:center; flex-wrap:wrap; justify-content:space-between;
+}
+#description_about{
+    width:700px; 
+}
+#description_about strong{
+    margin-top:70px; 
+}
+#description_about .paragraph_description_about{
+    margin-top:20px; font-size:15px; margin-bottom:40px;
+}
+.content_about .img_about{
+    width:400px; height:400px; border-radius:10px;
+}
+.content_about .découvrir_notre_projets_btn{
+    text-decoration:none; color:#0e8a8a; 
+    padding:10px 15px; font-family:Arial, Helvetica, sans-serif;
+    font-size:20px; border-radius:10px;
+    border:1px solid #0e8a8a;
+    transition:all 0.4s;
+}
+.content_about .découvrir_notre_projets_btn:hover{
+    color:white; background-color:#0e8a8a;
+}
+@media (max-width:1300px) {
+    #description_about{
+        width:550px;
+    }
+    .content_about .img_about{
+        width:370px; height:370px; border-radius:10px;
+    }
+}
+@media (max-width:1000px) {
+    #description_about{
+        width:340px;
+    }
+    .content_about .img_about{
+        width:350px; height:350px; border-radius:10px;
+    }
+}
+@media (max-width:900px) {
+    #description_about{
+        width:300px;
+    }
+    .content_about .img_about{
+        width:310px; height:310px; border-radius:10px;
+    }
+}
+@media (max-width:800px) {
+    #description_about{
+        width:auto;
+    }
+    .content_about .img_about{
+        width:300px; height:300px; border-radius:10px;
+    }
+    .content_about .img_about{
+        display:none;
+    }
+}
+/* projet */
+
+/* pourquoi nous */
